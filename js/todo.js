@@ -3,6 +3,7 @@ const toDoInput = toDoForm.querySelector("input");
 const toDoList = document.getElementById("todo-list");
 
 const TODOS_KEY = "todos";
+const COMPLETE_CLASSNAME = "complete";
 
 let toDos = [];
 
@@ -17,18 +18,38 @@ function deleteToDo(event) {
   toDos = toDos.filter(todo => todo.id !== parseInt(li.id));
   saveToDos();
 }
+function completeToDo(event, obj) {
+  const li = event.target.parentElement;
+  li.classList.toggle(COMPLETE_CLASSNAME);
+  console.dir(li);
+
+  if(li.classList.contains(COMPLETE_CLASSNAME)){
+    obj.complete = true;
+  } else {
+    obj.complete = false;
+  }
+  saveToDos();
+}
 
 function paintToDo(newToDoObj) {
   const li = document.createElement("li");
   li.id = newToDoObj.id;
   const span = document.createElement("span");
   span.innerText = newToDoObj.text;
-  const button = document.createElement("button");
-  button.innerText = "❌";
-  button.addEventListener("click", deleteToDo);
+  const btnDel = document.createElement("button");
+  btnDel.innerText = "❌";
+  btnDel.addEventListener("click", deleteToDo);
+  const btnCom = document.createElement("button");
+  btnCom.innerText = "✅";
+  btnCom.addEventListener("click", (event)=>completeToDo(event, newToDoObj));
+
+  if(newToDoObj.complete === true) {
+    li.classList.toggle(COMPLETE_CLASSNAME);
+  }
 
   li.appendChild(span);
-  li.appendChild(button);
+  li.appendChild(btnCom);
+  li.appendChild(btnDel);
   toDoList.appendChild(li);
 }
 
@@ -39,6 +60,7 @@ function handleToDoSubmit(event) {
   const newTodoObj = {
     text: newToDo,
     id: Date.now(),
+    complete: false,
   }
   toDos.push(newTodoObj);
   paintToDo(newTodoObj);

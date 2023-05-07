@@ -1,3 +1,149 @@
+@font-face {
+  font-family: 'omyu_pretty';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'blacksword';
+  src: url('../css/font/Blacksword.otf') format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .hidden {
   display: none;
+}
+
+body form, #clock, #login-form, #greeting, #todo-list, #quote, #weather {
+  text-align: center;
+  font-family: 'omyu_pretty';
+}
+
+#bg-txt {
+  font-size: 10rem;  
+  font-family: 'blacksword';
+
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: -1;
+  color: white;
+  opacity: 0.3;
+}
+
+#clock {
+  font-size: 5rem;
+}
+#login-form {
+  margin-top: 30px;
+}
+#greeting {
+  margin-top: 10%;
+}
+
+#wrap-todo-list {
+  width: 40%;
+  max-height: 45vh;
+  overflow: auto;
+  border-radius: 10px;
+  margin-top: 1%;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  background-color: rgba( 255, 255, 255, 0.6 );
+}
+
+#todo-form input {
+  width: 80%;
+  margin-top: 25px;
+  
+  font-size: 1.5rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 2px black;
+
+  text-align: center;
+  font-family: 'omyu_pretty';
+
+}
+#todo-form input::placeholder {
+  color: black;
+  text-align: center;
+  font-family: 'omyu_pretty';
+}
+#todo-form input:focus {
+  outline: none;
+}
+
+
+#todo-list {
+  list-style: none;
+  padding: 15px;
+}
+#todo-list li {
+  margin-top: 5px;
+  margin-left: 10%;
+  text-align: left;
+
+  transition: 0.1s;
+}
+#todo-list li:hover:not(.complete) {
+  margin-top: 5px;
+  margin-left: 21%;
+  text-align: left;
+
+  transform: scale(1.3);
+}
+#todo-list .complete {
+  margin-top: 5px;
+  margin-right: 10%;
+  text-decoration: line-through;
+
+  transform: translateX(80%);
+}
+#todo-list button {
+  border: none;
+  background-color: transparent;
+  margin-left: 2%;
+}
+
+#quote {
+  display: flex;
+  flex-direction: column;
+
+  position: fixed;
+  left: 50%;
+  bottom: 7%;
+  transform: translate(-50%, -50%);
+}
+#quote span:first-child {
+  font-size: 1.3rem;
+  text-shadow: 1px 1px 5px rgb(255, 255, 255);
+}
+#quote span:last-child {
+  text-shadow: 1px 1px 5px rgb(255, 255, 255);
+}
+
+#weather {
+  position: absolute;
+  top: 3%;
+  right: 2%;
+}
+
+.bgImage {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  opacity: 80%;
+  position: absolute;
+  top: 0;
+  z-index: -2;
+
 }
