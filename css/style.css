@@ -40,8 +40,34 @@ body form, #clock, #login-form, #greeting, #todo-list, #quote, #weather {
 #clock {
   font-size: 5rem;
 }
-#login-form {
-  margin-top: 30px;
+#login-form:not(.hidden) {
+  display: flex;
+  margin-top: 10%;
+  align-items: center;
+  justify-content: center;
+}
+#login-form input:first-child {
+  border: none;
+  background-color: transparent;
+  font-family: 'omyu_pretty';
+
+  font-size: 2rem;
+  text-align: center;
+}
+#login-form input:first-child::placeholder {
+  color: black;
+}
+#login-form input:first-child:focus {
+  outline: none;
+}
+#login-form input:last-child {
+  border: solid 2px black;
+  border-radius: 5px;
+  padding: 10px;
+
+  background-color: transparent;
+
+  font-family: 'omyu_pretty';
 }
 #greeting {
   margin-top: 10%;
