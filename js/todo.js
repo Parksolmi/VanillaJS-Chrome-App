@@ -41,6 +41,7 @@ function paintToDo(newToDoObj) {
   btnDel.addEventListener("click", deleteToDo);
   const btnCom = document.createElement("button");
   btnCom.innerText = "✅";
+  btnCom.setAttribute("class", "delete-btn");
   btnCom.addEventListener("click", (event)=>completeToDo(event, newToDoObj));
 
   if(newToDoObj.complete === true) {

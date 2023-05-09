@@ -1,0 +1,43 @@
+#top-right-menu {
+  display: flex;
+  align-items: center;
+
+  position: absolute;
+  top: 3%;
+  right: 2%;
+}
+
+#weather {
+  display: flex;
+  align-items: center;
+
+  text-align: center;
+  font-family: 'omyu_pretty';
+  font-size: var(--font-size-small);
+}
+
+#weather .weather-icon {
+  display: flex;
+  width: 40px;
+}
+#weather span:last-child {
+  margin-left: 5px;
+}
+
+#logout input {
+  border: solid 1px black;
+  border-radius: 5px;
+  padding: 3px 5px;
+  margin-left: 10px;
+
+  text-align: center;
+  font-family: 'omyu_pretty';
+  font-size: var(--font-size-small);
+  background-color: transparent;
+  
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}

@@ -1,4 +1,4 @@
-
+ 
 #wrap-todo-list {
   text-align: center;
   font-family: 'omyu_pretty';
@@ -29,9 +29,6 @@
   outline: none;
 }
 
-#todo-form .percent-bar {
-
-}
 
 
 #todo-list {
