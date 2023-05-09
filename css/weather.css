@@ -1,0 +1,10 @@
+
+#weather {
+  text-align: center;
+  font-family: 'omyu_pretty';
+  font-size: var(--font-size-small);
+
+  position: absolute;
+  top: 3%;
+  right: 2%;
+}

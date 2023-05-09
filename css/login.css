@@ -1,0 +1,37 @@
+
+.hidden {
+  display: none;
+}
+
+#greeting, #login-form, #login-form input {
+  text-align: center;
+  font-family: 'omyu_pretty';
+  background-color: transparent;
+}
+
+#greeting {
+  margin-top: 10%;
+}
+
+#login-form:not(.hidden) {
+  display: flex;
+  margin-top: 10%;
+  align-items: center;
+  justify-content: center;
+}
+#login-form input:first-child {
+  border: none;
+  font-size: var(--font-size-subtitle);
+}
+#login-form input:first-child::placeholder {
+  color: black;
+}
+#login-form input:first-child:focus {
+  outline: none;
+}
+#login-form input:last-child {
+  border: solid 2px black;
+  border-radius: 5px;
+  padding: 10px;
+  
+}
